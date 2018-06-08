@@ -52,7 +52,7 @@ To get started, add this role (`WilliamsCommerceLtd.trellis-301-rewrites`) to th
 ```
 - name: trellis-301-rewrites
   src: WilliamsCommerceLtd.trellis-301-rewrites
-  version: 1.0.0
+  version: 1.1.0
 ```
 
 Then re-run the `ansible-galaxy install -r requirements.yml` to install the new role. You might need to add the `-f` option to force install of previously downloaded roles.

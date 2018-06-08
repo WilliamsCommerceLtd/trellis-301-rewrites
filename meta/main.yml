@@ -1,0 +1,11 @@
+---
+galaxy_info:
+  author: WilliamsCommerceLtd
+  description: Add 301 rewrites to your Nginx setup
+  min_ansible_version: 1.8
+  platforms:
+  - name: Ubuntu
+  categories:
+  - development
+  - web
+dependencies: []

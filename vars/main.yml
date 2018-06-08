@@ -1,0 +1,2 @@
+# merge wordpress_sites and vault_wordpress_sites variables
+merged_wordpress_sites: "{{ wordpress_sites|combine(vault_wordpress_sites, recursive=True) }}"

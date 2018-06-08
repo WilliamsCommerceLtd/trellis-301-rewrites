@@ -1,0 +1,31 @@
+---
+
+- name: Delete current nginxrewrites file
+  file:
+    path: "{{ nginxrewrites_path }}/nginxrewrites"
+    state: absent
+
+- name: Unset Nginx config
+  lineinfile:
+    regexp: "include /etc/nginx/conf.d/nginxrewrites;$"
+    state: absent
+    dest: "/etc/nginx/sites-available/{{ item.key }}.conf"
+  with_dict: "{{ wordpress_sites }}"
+  notify: reload nginx
+
+- name: Upload nginxrewrites file
+  copy:
+    src: "rewrites/nginxrewrites"
+    dest: "{{ nginxrewrites_path }}/nginxrewrites"
+  with_dict: "{{ merged_wordpress_sites }}"
+  when: item.value.nginxrewrites is defined
+  notify: reload nginx
+
+- name: Set Nginx config
+  lineinfile:
+    line: "  include /etc/nginx/conf.d/nginxrewrites;"
+    insertafter: index index.php index.htm index.html;
+    dest: "/etc/nginx/sites-available/{{ item.key }}.conf"
+  with_dict: "{{ merged_wordpress_sites }}"
+  when: item.value.nginxrewrites is defined
+  notify: reload nginx

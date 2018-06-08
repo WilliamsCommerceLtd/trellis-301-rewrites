@@ -2,10 +2,12 @@
 galaxy_info:
   author: WilliamsCommerceLtd
   description: Add 301 rewrites to your Nginx setup
+  company: Williams Commerce Ltd
+  license: "WCL license"
   min_ansible_version: 1.8
   platforms:
   - name: Ubuntu
-  categories:
+  galaxy_tags:
   - development
   - web
 dependencies: []

@@ -1,1 +1,0 @@
-rewrite ^/some/url$ /some/other/url permanent;

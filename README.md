@@ -31,6 +31,13 @@ wordpress_sites:
     <b>nginxrewrites:</b>
 </pre>
 
+Adding rewrites
+---------------
+You will need to create a directory within yor trellis root called 'rewrites' witing there create a file called 'nginxrewrites', you will need to put yor rewrites in this file.
+An example rewrite will look like:
+<pre>
+rewrite ^/some/url$ /some/other/url permanent;
+</pre>
 
 Dependencies
 ------------

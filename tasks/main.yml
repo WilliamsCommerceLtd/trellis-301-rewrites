@@ -15,7 +15,7 @@
 
 - name: Upload nginxrewrites file
   copy:
-    src: "rewrites/nginxrewrites"
+    src: "../../../rewrites/nginxrewrites"
     dest: "{{ nginxrewrites_path }}/nginxrewrites"
   with_dict: "{{ merged_wordpress_sites }}"
   when: item.value.nginxrewrites is defined
